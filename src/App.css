@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+body {
+	font-family: 'Raleway', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+	text-transform: uppercase;
+}
+.title {
+	font-family: 'Oswald', sans-serif;
+	color: navy;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.invalid {
+	color: red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	border-bottom: 1px solid #dbdbdb;
+	padding: 20px;
+}
+.item1 {
+	order: 1;
+	flex-grow: 0.25;
+}
+.item2 {
+	order: 3;
+	flex-grow: 1;
+}
+.item3 {
+	order: 3;
+}
+.button {
+	width: 50px;
+	height: 50px;
+	background-color: white;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	font-size: 3em;
+	color: gray;
+}
+input {
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #dbdbdb;
+	width: 100%;
+	height: 20px;
+}
+input:focus {
+	border-bottom: 1px solid blue;
 }
 
-.App-link {
-  color: #61dafb;
+span {
+	width: auto;
+	height: auto;
+	padding: 5px;
+	background-color: #dbdbdb;
+	border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (min-width: 600px) {
+	.main {
+		margin-left: auto;
+		margin-right: auto;
+		width: 60%;
+		border: solid 2px navy;
+		border-radius: 10%;
+		padding: 30px;
+	}
 }

@@ -1,7 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import { apiUrl } from '../config';
+import Contact from './Contact';
 
-const Home = () => {
-	return <div></div>;
+const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
+	const [contacts, setContacts] = useState([]);
+
+	let history = useHistory();
+
+	function logout() {
+		localStorage.clear();
+		setIsAuth(false);
+		history.push('/');
+	}
+	useEffect(() => {
+		setRefresh(true);
+		console.log('setting refresh');
+		if (!isAuth) {
+			history.push('/');
+		}
+	}, []);
+	useEffect(() => {
+		if (refresh) {
+			const token = localStorage.getItem('token');
+			console.log('use effect running');
+			axios({
+				method: 'GET',
+				url: `${apiUrl}/api/contacts`,
+				headers: {
+					Authorization: `${token}`,
+				},
+				data: { user_id: localStorage.getItem('userId') },
+			})
+				.then((res) => console.log(res.data))
+				.then(() => setRefresh(false))
+				.catch((err) => console.log(err));
+		}
+	}, [refresh]);
+
+	return (
+		<div>
+			this is the home page
+			{contacts.map((contact) => {
+				return (
+					<Contact
+						key={contact._id}
+						firstName={contact.firstName}
+						setRefresh={setRefresh}
+					/>
+				);
+			})}
+		</div>
+	);
 };
 
 export default Home;
