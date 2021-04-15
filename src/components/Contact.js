@@ -1,5 +1,6 @@
 import React from 'react';
 
+//in progress
 const Contact = ({ key, firstName, setRefresh }) => {
 	return (
 		<div key={key} className='card'>

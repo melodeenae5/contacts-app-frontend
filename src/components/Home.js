@@ -4,6 +4,7 @@ import axios from 'axios';
 import { apiUrl } from '../config';
 import Contact from './Contact';
 
+//in progress
 const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	const [contacts, setContacts] = useState([]);
 
