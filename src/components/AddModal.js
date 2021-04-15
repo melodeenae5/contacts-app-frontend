@@ -21,11 +21,22 @@ const AddModal = () => {
 					/>
 					<input
 						type='text'
-						required
 						placeholder='Last Name'
 						id='lastName'
 						onChange={handleChange}
 					/>
+					<input
+						type='text'
+						placeholder='Nickname'
+						id='nickName'
+						onChange={handleChange}
+					/>
+					<label for='phoneType'>Phone Type:</label>
+					<select id='phoneType' name='phoneType'>
+						<option value='mobile'>Mobile</option>
+						<option value='home'>Home</option>
+						<option value='work'>Work</option>
+					</select>
 				</form>
 			</div>
 		</div>
