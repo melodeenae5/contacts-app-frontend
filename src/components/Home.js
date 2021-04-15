@@ -34,7 +34,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 				},
 				data: { user_id: localStorage.getItem('userId') },
 			})
-				.then((res) => console.log(res))
+				.then((res) => console.log(res.data))
 				.then(() => setRefresh(false))
 				.catch((err) => console.log(err));
 		}
