@@ -14,30 +14,29 @@ function App() {
 		<div>
 			<h1 className='title'>Names 'n Stuff</h1>
 
-			<div className='main'>
-				<Route
-					path='/'
-					exact
-					render={() => (
-						<Login
-							setToken={setToken}
-							setRefresh={setRefresh}
-							setIsAuth={setIsAuth}
-						/>
-					)}
-				/>
-				<Route
-					path='/create'
-					exact
-					render={() => (
-						<CreateAccount
-							setToken={setToken}
-							setRefresh={setRefresh}
-							setIsAuth={setIsAuth}
-						/>
-					)}
-				/>
-			</div>
+			<Route
+				path='/'
+				exact
+				render={() => (
+					<Login
+						setToken={setToken}
+						setRefresh={setRefresh}
+						setIsAuth={setIsAuth}
+					/>
+				)}
+			/>
+			<Route
+				path='/create'
+				exact
+				render={() => (
+					<CreateAccount
+						setToken={setToken}
+						setRefresh={setRefresh}
+						setIsAuth={setIsAuth}
+					/>
+				)}
+			/>
+
 			<Route
 				path='/home'
 				render={() => (

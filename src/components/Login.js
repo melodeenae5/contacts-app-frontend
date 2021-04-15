@@ -30,6 +30,7 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 				if (res.data.token) {
 					localStorage.setItem('token', res.data.token);
 					localStorage.setItem('userId', res.data.user_id);
+					localStorage.setItem('username', res.data.username);
 					setToken(res.data.token);
 					setIsAuth(true);
 					history.push('/home');
@@ -54,7 +55,7 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 					onChange={handleChange}
 					value={loginInfo.username}
 				/>
-				<label htmlFor='username'>Username</label>
+
 				<input
 					type='password'
 					required
@@ -63,7 +64,6 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 					onChange={handleChange}
 					value={loginInfo.password}
 				/>
-				<label htmlFor='password'>Password</label>
 
 				<button type='submit'>Login</button>
 				<button type='button' onClick={handleCancel} className='cancel'>

@@ -41,6 +41,15 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 
 	return (
 		<div>
+			<div className='card'>
+				<button>Add Contact</button>
+				<p className='item-right2'>
+					Logged in as: {localStorage.getItem('username')}
+				</p>
+				<button className='item-right' onClick={logout}>
+					Logout
+				</button>
+			</div>
 			this is the home page
 			{contacts.map((contact) => {
 				return (

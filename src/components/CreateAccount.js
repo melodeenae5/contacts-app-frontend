@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { apiUrl } from '../config';
 
 const CreateAccount = ({ setToken, setRefresh, setIsAuth }) => {
@@ -23,6 +23,7 @@ const CreateAccount = ({ setToken, setRefresh, setIsAuth }) => {
 				if (res.data.token) {
 					localStorage.setItem('token', res.data.token);
 					localStorage.setItem('userId', res.data.user_id);
+					localStorage.setItem('username', res.data.username);
 					setToken(res.data.token);
 					setIsAuth(true);
 					history.push('/home');
@@ -67,11 +68,13 @@ const CreateAccount = ({ setToken, setRefresh, setIsAuth }) => {
 					type='password'
 					required
 					id='password'
-					placeholder='password'
+					placeholder='Password'
 					onChange={handleChange}
 				/>
 				<button type='submit'>Create Account</button>
 			</form>
+			<br />
+			<Link to='/'>Back to Login</Link>
 		</div>
 	);
 };
