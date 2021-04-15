@@ -48,6 +48,7 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 			<form id='loginForm' onSubmit={handleSubmit}>
 				<input
 					type='text'
+					required
 					placeholder='Username'
 					id='username'
 					onChange={handleChange}
@@ -56,6 +57,7 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 				<label htmlFor='username'>Username</label>
 				<input
 					type='password'
+					required
 					placeholder='Password'
 					id='password'
 					onChange={handleChange}

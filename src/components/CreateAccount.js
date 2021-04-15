@@ -17,53 +17,55 @@ const CreateAccount = ({ setToken, setRefresh, setIsAuth }) => {
 			method: 'post',
 			url: `${apiUrl}/users/register`,
 			data: regInfo,
-		}).then((res) => {
-			console.log(res);
-			if (res.data.token) {
-				localStorage.setItem('token', res.data.token);
-				localStorage.setItem('userId', res.data.user_id);
-				setToken(res.data.token);
-				setIsAuth(true);
-				history.push('/home');
-				setRefresh(true);
-			}
-		});
+		})
+			.then((res) => {
+				console.log(res);
+				if (res.data.token) {
+					localStorage.setItem('token', res.data.token);
+					localStorage.setItem('userId', res.data.user_id);
+					setToken(res.data.token);
+					setIsAuth(true);
+					history.push('/home');
+					setRefresh(true);
+				}
+			})
+			.catch((err) => console.log(err));
 	}
 	return (
-		<div>
+		<div className='form'>
 			<h1>Create Account</h1>
 			<form onSubmit={handleSubmit}>
 				<input
 					type='text'
-					require
+					required
 					id='firstName'
 					placeholder='First Name'
 					onChange={handleChange}
 				/>
 				<input
 					type='text'
-					require
+					required
 					id='lastName'
 					placeholder='Last Name'
 					onChange={handleChange}
 				/>
 				<input
 					type='text'
-					require
+					required
 					id='username'
 					placeholder='Username'
 					onChange={handleChange}
 				/>
 				<input
 					type='email'
-					require
+					required
 					id='email'
 					placeholder='Email'
 					onChange={handleChange}
 				/>
 				<input
 					type='password'
-					require
+					required
 					id='password'
 					placeholder='password'
 					onChange={handleChange}

@@ -2,7 +2,8 @@ import './App.css';
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Home from './components/Home';
-import Landing from './components/Landing';
+import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
 
 function App() {
 	const [token, setToken] = useState(localStorage.getItem('token'));
@@ -12,18 +13,31 @@ function App() {
 	return (
 		<div>
 			<h1 className='title'>Names 'n Stuff</h1>
-			<Route
-				path='/'
-				exact
-				render={() => (
-					<Landing
-						setToken={setToken}
-						setRefresh={setRefresh}
-						setIsAuth={setIsAuth}
-					/>
-				)}
-			/>
 
+			<div className='main'>
+				<Route
+					path='/'
+					exact
+					render={() => (
+						<Login
+							setToken={setToken}
+							setRefresh={setRefresh}
+							setIsAuth={setIsAuth}
+						/>
+					)}
+				/>
+				<Route
+					path='/create'
+					exact
+					render={() => (
+						<CreateAccount
+							setToken={setToken}
+							setRefresh={setRefresh}
+							setIsAuth={setIsAuth}
+						/>
+					)}
+				/>
+			</div>
 			<Route
 				path='/home'
 				render={() => (
@@ -35,15 +49,6 @@ function App() {
 					/>
 				)}
 			/>
-			{/* 
-			<ProtectedRoute
-				path='/home'
-				component={Home}
-				auth={isAuth}
-				setIsAuth={setIsAuth}
-				refresh={refresh}
-				setRefresh={setRefresh}
-			/> */}
 		</div>
 	);
 }
