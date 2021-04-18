@@ -26,17 +26,33 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 		if (refresh) {
 			const token = localStorage.getItem('token');
 			console.log('use effect running');
-			axios({
-				method: 'GET',
-				url: `${apiUrl}/api/contacts`,
-				headers: {
-					Authorization: `${token}`,
-				},
-				data: { user_id: localStorage.getItem('userId') },
-			})
-				.then((res) => console.log(res.data))
-				.then(() => setRefresh(false))
-				.catch((err) => console.log(err));
+			const getContacts = async () => {
+				try {
+					const res = await axios({
+						method: 'GET',
+						url: `${apiUrl}/api/contacts`,
+						headers: {
+							Authorization: `${token}`,
+						},
+						data: { user_id: localStorage.getItem('userId') },
+					});
+					console.log(res.data);
+				} catch (err) {
+					console.error(err);
+				}
+			};
+			getContacts();
+			// axios({
+			// 	method: 'GET',
+			// 	url: `${apiUrl}/api/contacts`,
+			// 	headers: {
+			// 		Authorization: `${token}`,
+			// 	},
+			// 	data: { user_id: localStorage.getItem('userId') },
+			// })
+			// 	.then((res) => console.log(res.data))
+			// 	.then(() => setRefresh(false))
+			// 	.catch((err) => console.log(err));
 		}
 	}, [refresh]);
 
