@@ -50,7 +50,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 					Logout
 				</button>
 			</div>
-			this is the home page
+
 			{contacts.map((contact) => {
 				return (
 					<Contact

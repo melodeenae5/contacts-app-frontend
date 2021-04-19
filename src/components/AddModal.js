@@ -32,10 +32,52 @@ const AddModal = () => {
 						id='nickName'
 						onChange={handleChange}
 					/>
-					<label for='phoneType'>Phone Type:</label>
-					<select id='phoneType' name='phoneType'>
+					<input
+						type='text'
+						placeholder='Category'
+						id='category'
+						onChange={handleChange}
+					/>
+					<input
+						type='text'
+						placeholder='Job Title'
+						id='jobTitle'
+						onChange={handleChange}
+					/>
+					<input
+						type='text'
+						placeholder='Company'
+						id='company'
+						onChange={handleChange}
+					/>
+					<label for='phoneType1'>Phone Type 1:</label>
+					<select id='phoneType1' name='phoneType1'>
 						<option value='mobile'>Mobile</option>
 						<option value='home'>Home</option>
+						<option value='work'>Work</option>
+					</select>
+					<input
+						type='text'
+						placeholder='Phone Number 1'
+						id='phoneNumber1'
+						onChange={handleChange}
+					/>
+					<label for='phoneType2'>Phone 2 Type:</label>
+					<select id='phoneType2' name='phoneType2'>
+						<option value='mobile'>Mobile</option>
+						<option value='home'>Home</option>
+						<option value='work'>Work</option>
+					</select>
+					<input
+						type='text'
+						placeholder='Phone Number 2'
+						id='phoneNumber2'
+						onChange={handleChange}
+					/>
+					<label for='emailType1'>Email Type 1:</label>
+					<select id='emailType1' name='emailType1'>
+						<option value='personal'>Personal</option>
+						<option value='school'>School</option>
 						<option value='work'>Work</option>
 					</select>
 				</form>

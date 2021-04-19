@@ -47,8 +47,40 @@ const Contact = ({ contact, setRefresh }) => {
 						{contact.addresses[1].addressType})
 					</p>
 					<p>
-						<b>Important Dates:</b>
-						<span></span>
+						<b>Important Dates:</b>{' '}
+						<span>
+							{contact.importantDates[0].label}:{' '}
+							{contact.importantDates[0].date.toString()}
+						</span>{' '}
+						|{' '}
+						<span>
+							{contact.importantDates[1].label}:{' '}
+							{contact.importantDates[1].date.toString()}
+						</span>
+					</p>
+					<p>
+						<b>Website:</b> {contact.website}
+					</p>
+					<p>
+						<b>Where we met:</b> {contact.whereWeMet}
+					</p>
+					<p>
+						<b>What we talked about:</b> {contact.whatWeTalkedAbout}
+					</p>
+					<p>
+						<b>Likes:</b> {contact.likes[0]}, {contact.likes[1]},{' '}
+						{contact.likes[2]}, {contact.likes[3]}
+					</p>
+					<p>
+						<b>Dislikes:</b> {contact.dislikes[0]}, {contact.dislikes[1]},{' '}
+						{contact.dislikes[2]}, {contact.dislikes[3]}
+					</p>
+					<p>
+						<b>Passions:</b> {contact.passions[0]}, {contact.passions[1]},{' '}
+						{contact.passions[2]}, {contact.passions[3]}
+					</p>
+					<p>
+						<b>Notes:</b> {contact.notes}
 					</p>
 					<button
 						className='item3 link'
