@@ -34,14 +34,13 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 				try {
 					var res = await axios({
 						method: 'GET',
-						url: `${apiUrl}/api/contacts/working`,
+						url: `${apiUrl}/api/contacts`,
 						headers: {
 							//'Content-Type': 'application/x-www-form-urlencoded',
 							//'Content-Type': 'application/json',
 							//Accept: 'application/json',
 							Authorization: token,
-						},
-						data: { user_id: localStorage.getItem('userId') },
+						}
 					});
 
 					console.log(res.data);
