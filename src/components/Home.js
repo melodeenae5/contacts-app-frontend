@@ -25,18 +25,26 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	useEffect(() => {
 		if (refresh) {
 			const token = localStorage.getItem('token');
-			console.log('use effect running');
+			const userId = localStorage.getItem('userId');
+			console.log(`use effect running: ${token}`);
+			console.log(`userId: ${userId}`);
+			console.log(`username: ${localStorage.getItem('username')}`);
+			console.log(`url: ${apiUrl}/api/contacts`);
 			const getContacts = async () => {
 				try {
-					const res = await axios({
+					var res = await axios({
 						method: 'GET',
-						url: `${apiUrl}/api/contacts`,
+						url: `${apiUrl}/api/contacts/working`,
 						headers: {
-							Authorization: `${token}`,
+							'Content-Type': 'application/json',
+							Accept: 'application/json',
+							Authorization: token,
 						},
 						data: { user_id: localStorage.getItem('userId') },
 					});
+
 					console.log(res.data);
+					console.log(res.request);
 				} catch (err) {
 					console.error(err);
 				}
