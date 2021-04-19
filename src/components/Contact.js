@@ -1,9 +1,9 @@
 import React from 'react';
 
 //in progress
-const Contact = ({ key, firstName, setRefresh }) => {
+const Contact = ({ firstName, setRefresh }) => {
 	return (
-		<div key={key} className='card'>
+		<div className='card'>
 			<h2>{firstName}</h2>
 		</div>
 	);

@@ -33,7 +33,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 					Authorization: `${token}`,
 				},
 			})
-				.then((res) => console.log(res.data))
+				.then((res) => setContacts(res.data))
 				.then(() => setRefresh(false))
 				.catch((err) => console.log(err));
 		}
