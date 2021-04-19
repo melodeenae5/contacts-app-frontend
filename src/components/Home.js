@@ -36,8 +36,9 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 						method: 'GET',
 						url: `${apiUrl}/api/contacts/working`,
 						headers: {
-							'Content-Type': 'application/json',
-							Accept: 'application/json',
+							//'Content-Type': 'application/x-www-form-urlencoded',
+							//'Content-Type': 'application/json',
+							//Accept: 'application/json',
 							Authorization: token,
 						},
 						data: { user_id: localStorage.getItem('userId') },
