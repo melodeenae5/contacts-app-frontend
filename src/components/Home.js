@@ -55,7 +55,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 				return (
 					<Contact
 						key={contact._id}
-						firstName={contact.firstName}
+						contact={contact}
 						setRefresh={setRefresh}
 					/>
 				);
