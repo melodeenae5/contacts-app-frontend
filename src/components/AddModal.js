@@ -17,6 +17,7 @@ const AddModal = ({ show, handleClose }) => {
 	function handleSubmit(event) {
 		event.preventDefault();
 		const token = localStorage.getItem('token');
+		console.log(newContact);
 		axios({
 			method: 'POST',
 			url: `${apiUrl}/api/contacts`,
@@ -34,13 +35,17 @@ const AddModal = ({ show, handleClose }) => {
 				setNewContact({ ...newContact, valid: false });
 			});
 	}
+	// if (!show) {
+	// 	return null;
+	// }
 	return (
 		<div
 			className='modal'
-			style={show ? { display: 'none' } : { display: 'block' }}>
+			/*style={show ? { display: 'block' } : { display: 'none' }} */
+		>
 			<div className='modal-content'>
 				<h1>Add Contact</h1>
-				<span class='close' onClick={handleClose}>
+				<span className='close' onClick={handleClose}>
 					&times;
 				</span>
 				<form id='addContactForm' onSubmit={handleSubmit}>
@@ -81,7 +86,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='company'
 						onChange={handleChange}
 					/>
-					<label for='phoneType1'>Phone Type 1:</label>
+					<label htmlFor='phoneType1'>Phone Type 1:</label>
 					<select id='phoneType1' name='phoneType1'>
 						<option value='mobile'>Mobile</option>
 						<option value='home'>Home</option>
@@ -93,7 +98,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='phoneNumber1'
 						onChange={handleChange}
 					/>
-					<label for='phoneType2'>Phone Type 2:</label>
+					<label htmlFor='phoneType2'>Phone Type 2:</label>
 					<select id='phoneType2' name='phoneType2'>
 						<option value='mobile'>Mobile</option>
 						<option value='home'>Home</option>
@@ -105,7 +110,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='phoneNumber2'
 						onChange={handleChange}
 					/>
-					<label for='emailType1'>Email Type 1:</label>
+					<label htmlFor='emailType1'>Email Type 1:</label>
 					<select id='emailType1' name='emailType1'>
 						<option value='personal'>Personal</option>
 						<option value='school'>School</option>
@@ -117,7 +122,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='emailAddress1'
 						onChange={handleChange}
 					/>
-					<label for='emailType2'>Email Type 2:</label>
+					<label htmlFor='emailType2'>Email Type 2:</label>
 					<select id='emailType2' name='emailType2'>
 						<option value='personal'>Personal</option>
 						<option value='school'>School</option>
@@ -129,7 +134,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='emailAddress2'
 						onChange={handleChange}
 					/>
-					<label for='addressType1'>Address Type 1: </label>
+					<label htmlFor='addressType1'>Address Type 1: </label>
 					<select id='addressType1' name='addressType1'>
 						<option value='home'>Personal</option>
 						<option value='school'>School</option>
@@ -141,7 +146,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='address1'
 						onChange={handleChange}
 					/>
-					<label for='addressType2'>Address Type 2: </label>
+					<label htmlFor='addressType2'>Address Type 2: </label>
 					<select id='addressType2' name='addressType2'>
 						<option value='home'>Personal</option>
 						<option value='school'>School</option>
@@ -153,7 +158,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='address1'
 						onChange={handleChange}
 					/>
-					<label for='label1'>Important Date 1: </label>
+					<label htmlFor='label1'>Important Date 1: </label>
 					<input
 						type='text'
 						placeholder='(e.g. birthday, anniversary, etc...)'
@@ -162,7 +167,7 @@ const AddModal = ({ show, handleClose }) => {
 						onChange={handleChange}
 					/>
 					<input type='date' id='date1' onChange={handleChange} />
-					<label for='label2'>Important Date 2: </label>
+					<label htmlFor='label2'>Important Date 2: </label>
 					<input
 						type='text'
 						placeholder='(e.g. birthday, anniversary, etc...)'
@@ -189,6 +194,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='whatWeTalkedAbout'
 						onChange={handleChange}
 						defaultValue='What we talked about...'></textarea>
+					<br />
 					Likes:
 					<input
 						type='text'
@@ -270,6 +276,7 @@ const AddModal = ({ show, handleClose }) => {
 						id='notes'
 						onChange={handleChange}
 						defaultValue='Notes...'></textarea>
+					<br />
 					<button type='submit'>Add Contact</button>
 					<button type='button' onClick={handleCancel}>
 						Cancel

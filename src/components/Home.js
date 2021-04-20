@@ -51,6 +51,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 				<button
 					onClick={() => {
 						setShow(true);
+						console.log('setting show to true');
 					}}>
 					Add Contact
 				</button>
@@ -62,6 +63,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 				</button>
 			</div>
 
+			<AddModal show={show} handleClose={handleClose} />
 			{contacts.map((contact) => {
 				return (
 					<Contact
@@ -71,7 +73,6 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 					/>
 				);
 			})}
-			<AddModal show={show} handleClose={handleClose} />
 		</div>
 	);
 };
