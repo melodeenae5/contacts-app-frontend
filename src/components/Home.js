@@ -3,12 +3,18 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { apiUrl } from '../config';
 import Contact from './Contact';
+import AddModal from './AddModal';
 
 //in progress
 const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	const [contacts, setContacts] = useState([]);
+	const [show, setShow] = useState(false);
 
 	let history = useHistory();
+
+	function handleClose() {
+		setShow(false);
+	}
 
 	function logout() {
 		localStorage.clear();
@@ -42,7 +48,12 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	return (
 		<div>
 			<div className='card'>
-				<button>Add Contact</button>
+				<button
+					onClick={() => {
+						setShow(true);
+					}}>
+					Add Contact
+				</button>
 				<p className='item-right2'>
 					Logged in as: {localStorage.getItem('username')}
 				</p>
@@ -60,6 +71,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 					/>
 				);
 			})}
+			<AddModal show={show} handleClose={handleClose} />
 		</div>
 	);
 };

@@ -66,7 +66,7 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 				/>
 
 				<button type='submit'>Login</button>
-				<button type='button' onClick={handleCancel} className='cancel'>
+				<button type='button' onClick={handleCancel}>
 					Cancel
 				</button>
 				<p
