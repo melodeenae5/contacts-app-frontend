@@ -5,6 +5,7 @@ import { apiUrl } from '../config';
 import Contact from './Contact';
 import AddModal from './AddModal';
 
+
 //in progress
 const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	const [contacts, setContacts] = useState([]);

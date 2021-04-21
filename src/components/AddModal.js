@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { apiUrl } from '../config';
 
-//in progress
+
 const AddModal = ({ show, handleClose, setRefresh }) => {
 	const [newContact, setNewContact] = useState({ valid: true });
 	function handleChange(event) {
