@@ -77,6 +77,7 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 			<h4>Don't Have An Account?</h4>
 			<Link to='/create'>Create Account</Link>
 			<br />
+			<br />
 			This is a site where you can organize your contacts list and keep track of
 			information you may want to remember about new acquaintances. Please
 			create an account or login to get started.
