@@ -92,7 +92,7 @@ const Contact = ({ contact, setRefresh }) => {
 									? `${contact.importantDates[0].label}:`
 									: ''}{' '}
 								{contact.importantDates[0].date
-									? contact.importantDates[0].date.toString()
+									? contact.importantDates[0].date.toString().slice(0, 10)
 									: ''}
 							</span>{' '}
 							|{' '}
@@ -101,7 +101,7 @@ const Contact = ({ contact, setRefresh }) => {
 									? `${contact.importantDates[1].label}:`
 									: ''}{' '}
 								{contact.importantDates[1].date
-									? contact.importantDates[1].date.toString()
+									? contact.importantDates[1].date.toString().slice(0, 10)
 									: ''}
 							</span>
 						</p>
