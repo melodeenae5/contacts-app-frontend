@@ -24,7 +24,7 @@ const AddModal = ({ show, handleClose }) => {
 			headers: {
 				Authorization: `${token}`,
 			},
-			data: { newContact },
+			data: newContact,
 		})
 			.then((res) => {
 				console.log(res);
@@ -86,72 +86,108 @@ const AddModal = ({ show, handleClose }) => {
 						id='company'
 						onChange={handleChange}
 					/>
-					<label htmlFor='phoneType1'>Phone Type 1:</label>
+					{/* <label htmlFor='phoneType1'>Phone Type 1:</label>
 					<select id='phoneType1' name='phoneType1'>
 						<option value='mobile'>Mobile</option>
 						<option value='home'>Home</option>
 						<option value='work'>Work</option>
-					</select>
+					</select> */}
+					<input
+						type='text'
+						placeholder='Phone Type 1'
+						id='phoneType1'
+						onChange={handleChange}
+					/>
 					<input
 						type='text'
 						placeholder='Phone Number 1'
 						id='phoneNumber1'
 						onChange={handleChange}
 					/>
-					<label htmlFor='phoneType2'>Phone Type 2:</label>
+					{/* <label htmlFor='phoneType2'>Phone Type 2:</label>
 					<select id='phoneType2' name='phoneType2'>
 						<option value='mobile'>Mobile</option>
 						<option value='home'>Home</option>
 						<option value='work'>Work</option>
-					</select>
+					</select> */}
+					<input
+						type='text'
+						placeholder='Phone Type 2'
+						id='phoneType2'
+						onChange={handleChange}
+					/>
 					<input
 						type='text'
 						placeholder='Phone Number 2'
 						id='phoneNumber2'
 						onChange={handleChange}
 					/>
-					<label htmlFor='emailType1'>Email Type 1:</label>
+					{/* <label htmlFor='emailType1'>Email Type 1:</label>
 					<select id='emailType1' name='emailType1'>
 						<option value='personal'>Personal</option>
 						<option value='school'>School</option>
 						<option value='work'>Work</option>
-					</select>
+					</select> */}
+					<input
+						type='text'
+						placeholder='Email Type 1'
+						id='emailType1'
+						onChange={handleChange}
+					/>
 					<input
 						type='text'
 						placeholder='Email Address 1'
 						id='emailAddress1'
 						onChange={handleChange}
 					/>
-					<label htmlFor='emailType2'>Email Type 2:</label>
+					{/* <label htmlFor='emailType2'>Email Type 2:</label>
 					<select id='emailType2' name='emailType2'>
 						<option value='personal'>Personal</option>
 						<option value='school'>School</option>
 						<option value='work'>Work</option>
-					</select>
+					</select> */}
+					<input
+						type='text'
+						placeholder='Email Type 2'
+						id='emailType2'
+						onChange={handleChange}
+					/>
 					<input
 						type='text'
 						placeholder='Email Address 2'
 						id='emailAddress2'
 						onChange={handleChange}
 					/>
-					<label htmlFor='addressType1'>Address Type 1: </label>
+					{/* <label htmlFor='addressType1'>Address Type 1: </label>
 					<select id='addressType1' name='addressType1'>
 						<option value='home'>Personal</option>
 						<option value='school'>School</option>
 						<option value='work'>Work</option>
-					</select>
+					</select> */}
+					<input
+						type='text'
+						placeholder='Address Type 1'
+						id='addressType1'
+						onChange={handleChange}
+					/>
 					<input
 						type='text'
 						placeholder='Address 1'
 						id='address1'
 						onChange={handleChange}
 					/>
-					<label htmlFor='addressType2'>Address Type 2: </label>
+					{/* <label htmlFor='addressType2'>Address Type 2: </label>
 					<select id='addressType2' name='addressType2'>
 						<option value='home'>Personal</option>
 						<option value='school'>School</option>
 						<option value='work'>Work</option>
-					</select>
+					</select> */}
+					<input
+						type='text'
+						placeholder='Address Type 2'
+						id='addressType2'
+						onChange={handleChange}
+					/>
 					<input
 						type='text'
 						placeholder='Address 2'
