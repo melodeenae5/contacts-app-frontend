@@ -66,7 +66,6 @@ const EditModal = ({
 		event.preventDefault();
 		const token = localStorage.getItem('token');
 		const contactId = contact._id;
-		console.log(editContact);
 		axios({
 			method: 'PATCH',
 			url: `${apiUrl}/api/contacts/${contactId}`,
@@ -76,7 +75,6 @@ const EditModal = ({
 			data: editContact,
 		})
 			.then((res) => {
-				console.log(res);
 				handleCloseEdit();
 				setRefresh(true);
 				setDetail(false);

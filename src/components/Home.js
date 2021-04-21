@@ -5,8 +5,6 @@ import { apiUrl } from '../config';
 import Contact from './Contact';
 import AddModal from './AddModal';
 
-
-//in progress
 const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	const [contacts, setContacts] = useState([]);
 	const [show, setShow] = useState(false);
@@ -24,7 +22,6 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	}
 	useEffect(() => {
 		setRefresh(true);
-		console.log('setting refresh');
 		if (!isAuth) {
 			history.push('/');
 		}
@@ -32,7 +29,6 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 	useEffect(() => {
 		if (refresh) {
 			const token = localStorage.getItem('token');
-			console.log('use effect running');
 			axios({
 				method: 'GET',
 				url: `${apiUrl}/api/contacts`,

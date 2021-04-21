@@ -19,7 +19,6 @@ const DeleteModal = ({
 			},
 		})
 			.then((res) => {
-				console.log(res);
 				handleCloseDelete();
 				setRefresh(true);
 			})

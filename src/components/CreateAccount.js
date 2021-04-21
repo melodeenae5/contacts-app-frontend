@@ -19,7 +19,6 @@ const CreateAccount = ({ setToken, setRefresh, setIsAuth }) => {
 			data: regInfo,
 		})
 			.then((res) => {
-				console.log(res);
 				if (res.data.token) {
 					localStorage.setItem('token', res.data.token);
 					localStorage.setItem('userId', res.data.user_id);

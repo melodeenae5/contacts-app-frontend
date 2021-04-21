@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import EditModal from './EditModal';
 import DeleteModal from './DeleteModal';
 
-//in progress
+
 const Contact = ({ contact, setRefresh }) => {
 	const [detail, setDetail] = useState();
 	const [showEdit, setShowEdit] = useState(false);

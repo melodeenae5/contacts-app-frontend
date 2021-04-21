@@ -17,7 +17,6 @@ const AddModal = ({ show, handleClose, setRefresh }) => {
 	function handleSubmit(event) {
 		event.preventDefault();
 		const token = localStorage.getItem('token');
-		console.log(newContact);
 		axios({
 			method: 'POST',
 			url: `${apiUrl}/api/contacts`,

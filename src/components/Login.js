@@ -26,7 +26,6 @@ const Login = ({ setToken, setRefresh, setIsAuth }) => {
 			data: { username: loginInfo.username, password: loginInfo.password },
 		})
 			.then((res) => {
-				console.log(res);
 				if (res.data.token) {
 					localStorage.setItem('token', res.data.token);
 					localStorage.setItem('userId', res.data.user_id);
