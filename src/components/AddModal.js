@@ -317,7 +317,7 @@ const AddModal = ({ show, handleClose, setRefresh }) => {
 					<br />
 					<button type='submit'>Add Contact</button>
 					<button type='button' onClick={handleCancel}>
-						Cancel
+						Clear
 					</button>
 					<p
 						style={
