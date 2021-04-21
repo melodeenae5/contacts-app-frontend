@@ -6,6 +6,7 @@ const DeleteModal = ({
 	showDelete,
 	handleCloseDelete,
 	setRefresh,
+	setDetail,
 	contact,
 }) => {
 	function deleteContact() {
@@ -21,6 +22,7 @@ const DeleteModal = ({
 			.then((res) => {
 				handleCloseDelete();
 				setRefresh(true);
+				setDetail(false);
 			})
 			.catch((err) => {
 				console.log(err);

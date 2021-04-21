@@ -19,6 +19,7 @@ const Contact = ({ contact, setRefresh }) => {
 				showDelete={showDelete}
 				handleCloseDelete={handleCloseDelete}
 				setRefresh={setRefresh}
+				setDetail={setDetail}
 				contact={contact}
 			/>
 			<EditModal
