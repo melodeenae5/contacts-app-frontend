@@ -44,10 +44,11 @@ const AddModal = ({ show, handleClose }) => {
 			/*style={show ? { display: 'block' } : { display: 'none' }} */
 		>
 			<div className='modal-content'>
-				<h1>Add Contact</h1>
-				<span className='close' onClick={handleClose}>
+				<button className='close' onClick={handleClose}>
 					&times;
-				</span>
+				</button>
+				<h1>Add Contact</h1>
+
 				<form id='addContactForm' onSubmit={handleSubmit}>
 					<input
 						type='text'

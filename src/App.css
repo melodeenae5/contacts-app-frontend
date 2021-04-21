@@ -86,8 +86,6 @@ input:focus {
 	height: 75%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.4);
-	align-items: center;
-	justify-content: center;
 }
 
 .modal-content {

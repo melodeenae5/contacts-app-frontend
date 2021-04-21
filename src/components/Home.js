@@ -47,6 +47,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 
 	return (
 		<div>
+			<AddModal show={show} handleClose={handleClose} />
 			<div className='card'>
 				<button
 					onClick={() => {
@@ -63,7 +64,6 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 				</button>
 			</div>
 
-			<AddModal show={show} handleClose={handleClose} />
 			{contacts.map((contact) => {
 				return (
 					<Contact
