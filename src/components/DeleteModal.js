@@ -38,8 +38,8 @@ const DeleteModal = ({
 				</button>
 				<h1>Delete Contact</h1>
 				<p>
-					Are you sure you want to delete {contact.firstName}{' '}
-					{contact.lastName ? contact.lastName : ''}?
+					Are you sure you want to delete "{contact.firstName}{' '}
+					{contact.lastName ? contact.lastName : ''}"?
 				</p>
 				<button onClick={deleteContact}>Yes, delete this contact</button>
 				<button onClick={handleCloseDelete}>Cancel</button>
