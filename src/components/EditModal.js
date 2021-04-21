@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { apiUrl } from '../config';
 
-const EditModal = ({ showEdit, handleCloseEdit, setRefresh, contact }) => {
+const EditModal = ({
+	showEdit,
+	handleCloseEdit,
+	setRefresh,
+	setDetail,
+	contact,
+}) => {
 	const originalContact = {
 		firstName: contact.firstName,
 		lastName: contact.lastName,
@@ -73,6 +79,7 @@ const EditModal = ({ showEdit, handleCloseEdit, setRefresh, contact }) => {
 				console.log(res);
 				handleCloseEdit();
 				setRefresh(true);
+				setDetail(false);
 			})
 			.catch((err) => {
 				console.log(err);

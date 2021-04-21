@@ -17,7 +17,7 @@ const Contact = ({ contact, setRefresh }) => {
 	return (
 		<div>
 			<DeleteModal
-				showDelet={showDelete}
+				showDelete={showDelete}
 				handleCloseDelete={handleCloseDelete}
 				setRefresh={setRefresh}
 				contact={contact}
@@ -26,6 +26,7 @@ const Contact = ({ contact, setRefresh }) => {
 				showEdit={showEdit}
 				handleCloseEdit={handleCloseEdit}
 				setRefresh={setRefresh}
+				setDetail={setDetail}
 				contact={contact}
 			/>
 

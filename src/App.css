@@ -80,7 +80,7 @@ input:focus {
 }
 
 .modal {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 	height: 100%;
 	overflow: auto;
