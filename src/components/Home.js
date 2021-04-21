@@ -36,7 +36,11 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 					Authorization: `${token}`,
 				},
 			})
-				.then((res) => setContacts(res.data))
+				.then((res) =>
+					setContacts(
+						res.data.sort((a, b) => (a.firstName > b.firstName ? 1 : -1))
+					)
+				)
 				.then(() => setRefresh(false))
 				.catch((err) => console.log(err));
 		}
