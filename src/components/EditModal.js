@@ -3,7 +3,50 @@ import axios from 'axios';
 import { apiUrl } from '../config';
 
 const EditModal = ({ showEdit, handleCloseEdit, setRefresh, contact }) => {
-	const [editContact, setEditContact] = useState({ valid: true });
+	const originalContact = {
+		firstName: contact.firstName,
+		lastName: contact.lastName,
+		nickName: contact.nickName,
+		phoneType1: contact.phone[0].phoneType,
+		phoneNumber1: contact.phone[0].phoneNumber1,
+		phoneType1: contact.phone[1].phoneType,
+		phoneNumber2: contact.phone[1].phoneNumber,
+		emailType1: contact.email[0].emailType,
+		emailAddress1: contact.email[0].emailAddress,
+		emailType2: contact.email[1].emailType,
+		emailAddress2: contact.email[1].emailAddress,
+		category: contact.category,
+		jobTitle: contact.workInfo?.jobTitle,
+		company: contact.workInfo?.company,
+		addressType1: contact.addresses[0].addressType,
+		address1: contact.addresses[0].address,
+		addressType2: contact.addresses[1].addressType,
+		address2: contact.addresses[1].address,
+		label1: contact.importantDates[0].label,
+		date1: contact.importantDates[0].date,
+		label2: contact.importantDates[1].label,
+		date2: contact.importantDates[1].date,
+		website: contact.website,
+		whereWeMet: contact.whereWeMet,
+		whatWeTalkedAbout: contact.whatWeTalkedAbout,
+		like1: contact.likes[0],
+		like2: contact.likes[1],
+		like3: contact.likes[2],
+		like4: contact.likes[3],
+		dislike1: contact.dislikes[0],
+		dislike1: contact.dislikes[1],
+		dislike1: contact.dislikes[2],
+		dislike1: contact.dislikes[3],
+		passion1: contact.passions[0],
+		passion2: contact.passions[1],
+		passion3: contact.passions[2],
+		passion4: contact.passions[3],
+		notes: contact.notes,
+	};
+	const [editContact, setEditContact] = useState({
+		...originalContact,
+		valid: true,
+	});
 	function handleChange(event) {
 		setEditContact({ ...editContact, [event.target.id]: event.target.value });
 	}
@@ -19,7 +62,7 @@ const EditModal = ({ showEdit, handleCloseEdit, setRefresh, contact }) => {
 		const contactId = contact._id;
 		console.log(editContact);
 		axios({
-			method: 'PUT',
+			method: 'PATCH',
 			url: `${apiUrl}/api/contacts/${contactId}`,
 			headers: {
 				Authorization: `${token}`,
@@ -219,7 +262,7 @@ const EditModal = ({ showEdit, handleCloseEdit, setRefresh, contact }) => {
 						id='date1'
 						onChange={handleChange}
 						defaultValue={
-							contact.importantDates[0]
+							contact.importantDates[0].date
 								? contact.importantDates[0].date.toString().slice(0, 10)
 								: ''
 						}
@@ -240,7 +283,7 @@ const EditModal = ({ showEdit, handleCloseEdit, setRefresh, contact }) => {
 						id='date2'
 						onChange={handleChange}
 						defaultValue={
-							contact.importantDates[1]
+							contact.importantDates[1].date
 								? contact.importantDates[1].date.toString().slice(0, 10)
 								: ''
 						}

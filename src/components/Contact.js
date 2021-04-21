@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
 import EditModal from './EditModal';
+import DeleteModal from './DeleteModal';
 
 //in progress
 const Contact = ({ contact, setRefresh }) => {
 	const [detail, setDetail] = useState();
 	const [showEdit, setShowEdit] = useState(false);
+	const [showDelete, setShowDelete] = useState(false);
 
 	function handleCloseEdit() {
 		setShowEdit(false);
 	}
+	function handleCloseDelete() {
+		setShowDelete(false);
+	}
 	return (
 		<div>
+			<DeleteModal
+				showDelet={showDelete}
+				handleCloseDelete={handleCloseDelete}
+				setRefresh={setRefresh}
+				contact={contact}
+			/>
 			<EditModal
 				showEdit={showEdit}
 				handleCloseEdit={handleCloseEdit}
 				setRefresh={setRefresh}
 				contact={contact}
 			/>
+
 			<div className='card'>
 				<h2 className='item1'>
 					{contact.firstName} {contact.lastName}
@@ -185,7 +197,14 @@ const Contact = ({ contact, setRefresh }) => {
 							}}>
 							Edit Contact
 						</button>
-						<button className='item-right'>Delete</button>
+						<button
+							className='item-right'
+							onClick={() => {
+								setShowDelete(true);
+								console.log('deleting');
+							}}>
+							Delete
+						</button>
 					</div>
 				) : (
 					<button
