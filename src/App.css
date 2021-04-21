@@ -82,8 +82,7 @@ input:focus {
 .modal {
 	position: fixed;
 	z-index: 1;
-	width: 75%;
-	height: 75%;
+	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.4);
 }
