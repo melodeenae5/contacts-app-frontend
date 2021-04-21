@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import EditModal from './EditModal';
 import DeleteModal from './DeleteModal';
 
-
 const Contact = ({ contact, setRefresh }) => {
 	const [detail, setDetail] = useState();
 	const [showEdit, setShowEdit] = useState(false);
@@ -194,7 +193,6 @@ const Contact = ({ contact, setRefresh }) => {
 							className='item-right2'
 							onClick={() => {
 								setShowEdit(true);
-								console.log('editing');
 							}}>
 							Edit Contact
 						</button>
@@ -202,7 +200,6 @@ const Contact = ({ contact, setRefresh }) => {
 							className='item-right'
 							onClick={() => {
 								setShowDelete(true);
-								console.log('deleting');
 							}}>
 							Delete
 						</button>

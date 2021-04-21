@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { apiUrl } from '../config';
 
-
 const AddModal = ({ show, handleClose, setRefresh }) => {
 	const [newContact, setNewContact] = useState({ valid: true });
 	function handleChange(event) {
@@ -26,9 +25,9 @@ const AddModal = ({ show, handleClose, setRefresh }) => {
 			data: newContact,
 		})
 			.then((res) => {
-				console.log(res);
 				handleClose();
 				setRefresh(true);
+				setNewContact({ valid: true });
 			})
 			.catch((err) => {
 				console.log(err);

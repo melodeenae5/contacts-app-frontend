@@ -49,7 +49,6 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 				<button
 					onClick={() => {
 						setShow(true);
-						console.log('setting show to true');
 					}}>
 					Add Contact
 				</button>
