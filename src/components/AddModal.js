@@ -3,7 +3,7 @@ import axios from 'axios';
 import { apiUrl } from '../config';
 
 //in progress
-const AddModal = ({ show, handleClose }) => {
+const AddModal = ({ show, handleClose, setRefresh }) => {
 	const [newContact, setNewContact] = useState({ valid: true });
 	function handleChange(event) {
 		setNewContact({ ...newContact, [event.target.id]: event.target.value });
@@ -29,15 +29,16 @@ const AddModal = ({ show, handleClose }) => {
 			.then((res) => {
 				console.log(res);
 				handleClose();
+				setRefresh(true);
 			})
 			.catch((err) => {
 				console.log(err);
 				setNewContact({ ...newContact, valid: false });
 			});
 	}
-	// if (!show) {
-	// 	return null;
-	// }
+	if (!show) {
+		return null;
+	}
 	return (
 		<div
 			className='modal'

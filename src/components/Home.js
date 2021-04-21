@@ -47,7 +47,7 @@ const Home = ({ isAuth, setIsAuth, refresh, setRefresh }) => {
 
 	return (
 		<div>
-			<AddModal show={show} handleClose={handleClose} />
+			<AddModal show={show} handleClose={handleClose} setRefresh={setRefresh} />
 			<div className='card'>
 				<button
 					onClick={() => {
